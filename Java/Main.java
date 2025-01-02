@@ -88,8 +88,8 @@ public class Main {
         String nom = scanner.nextLine();
         System.out.print("Prix du produit : ");
         double prix = scanner.nextDouble();
-        System.out.print("Stock du produit : ");
-        int stock = scanner.nextInt();
+        System.out.print("quantité du produit : ");
+        int quantité = scanner.nextInt();
         scanner.nextLine(); // Consume newline left-over
         System.out.print("Catégorie du produit : ");
         String categorie = scanner.nextLine();
@@ -101,7 +101,7 @@ public class Main {
         String fournisseurType = scanner.nextLine();
 
         Fournisseur fournisseur = new Fournisseur(0, fournisseurNom, fournisseurContact, fournisseurType);
-        Produit produit = new Produit(0, nom, prix, stock, categorie, fournisseur);
+        Produit produit = new Produit(0, nom, prix, quantité, categorie, fournisseur);
         gestionnaireProduits.ajouterProduit(produit);
 
         sauvegarderProduits();
@@ -113,9 +113,9 @@ public class Main {
         int id = scanner.nextInt();
         System.out.print("Nouveau prix : ");
         double prix = scanner.nextDouble();
-        System.out.print("Nouveau stock : ");
-        int stock = scanner.nextInt();
-        gestionnaireProduits.modifierProduit(id, prix, stock);
+        System.out.print("Nouveau quantité : ");
+        int quantité = scanner.nextInt();
+        gestionnaireProduits.modifierProduit(id, prix, quantité);
         sauvegarderProduits();
         System.out.println("Produit modifié avec succès.");
     }
@@ -191,7 +191,7 @@ public class Main {
 
     private static int afficherMenuPrincipal() {
         System.out.println("\n==== MENU PRINCIPAL ====");
-        System.out.println("1. Gestion du stock des produits");
+        System.out.println("1. Gestion du quantité des produits");
         System.out.println("2. Gestion des commandes");
         System.out.println("0. Quitter");
         System.out.println("========================");
@@ -199,9 +199,9 @@ public class Main {
     }
 
     private static int afficherMenuProduits() {
-        System.out.println("\n==== GESTION DU STOCK DES PRODUITS ====");
+        System.out.println("\n==== GESTION DU quantité DES PRODUITS ====");
         System.out.println("1. Ajouter un produit");
-        System.out.println("2. Modifier le prix et le stock d'un produit");
+        System.out.println("2. Modifier le prix et le quantité d'un produit");
         System.out.println("3. Rechercher un produit par nom");
         System.out.println("4. Rechercher un produit par catégorie");
         System.out.println("5. Rechercher un produit par fournisseur");
