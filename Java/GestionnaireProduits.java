@@ -27,10 +27,10 @@ public class GestionnaireProduits {
         this.produits.forEach(Produit::afficherDetails);
     }
 
-    public void modifierProduit(int id, double nouveauPrix, int nouveauStock) {
+    public void modifierProduit(int id, double nouveauPrix, int nouvellequantité) {
         for (Produit produit : this.produits) {
             if (produit.getId() == id) {
-                produit.mettreAJourProduit(nouveauPrix, nouveauStock);
+                produit.mettreAJourProduit(nouveauPrix, nouvellequantité);
                 System.out.println("Produit mis à jour avec succès");
                 return;
             }
