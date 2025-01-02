@@ -23,10 +23,10 @@ class GestionnaireProduits {
         this.produits.forEach(produit => produit.afficherDetails());
     }
 
-    modifierProduit(id, nouveauPrix, nouveauStock) {
+    modifierProduit(id, nouveauPrix, nouveauquantie) {
         const produit = this.produits.find(produit => produit.id === id);
         if (produit) {
-            produit.mettreAJourProduit(nouveauPrix, nouveauStock);
+            produit.mettreAJourProduit(nouveauPrix, nouveauquantie);
             console.log("Produit mis à jour avec succès");
         } else {
             console.log("Produit non trouvé");

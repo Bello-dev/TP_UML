@@ -97,7 +97,7 @@ function afficherMenuPrincipal() {
 function afficherMenuProduits() {
     console.log("\n==== GESTION DU STOCK DES PRODUITS ====");
     console.log("1. Ajouter un produit");
-    console.log("2. Modifier le prix et le stock d'un produit");
+    console.log("2. Modifier le prix et la quantie d'un produit");
     console.log("3. Rechercher un produit par nom");
     console.log("4. Rechercher un produit par catégorie");
     console.log("5. Rechercher un produit par fournisseur");
@@ -147,14 +147,14 @@ function main() {
                     clearConsole();
                     const nom = prompt("Nom du produit : ");
                     const prix = parseFloat(prompt("Prix du produit : "));
-                    const stock = parseInt(prompt("Stock du produit : "));
+                    const quantie = parseInt(prompt("quantie du produit : "));
                     const categorie = prompt("Catégorie du produit : ");
                     const fournisseurNom = prompt("Nom du fournisseur : ");
                     const fournisseurContact = prompt("Contact du fournisseur : ");
                     const fournisseurType = prompt("Type de produit du fournisseur : ");
 
                     const fournisseur = new Fournisseur(0, fournisseurNom, fournisseurContact, fournisseurType);
-                    const produit = new Produit(0, nom, prix, stock, categorie, fournisseur);
+                    const produit = new Produit(0, nom, prix, quantie, categorie, fournisseur);
                     gestionnaireProduits.ajouterProduit(produit);
 
                     sauvegarderProduits();
@@ -163,8 +163,8 @@ function main() {
                     clearConsole();
                     const id = parseInt(prompt("ID du produit à modifier : "));
                     const prix = parseFloat(prompt("Nouveau prix : "));
-                    const stock = parseInt(prompt("Nouveau stock : "));
-                    gestionnaireProduits.modifierProduit(id, prix, stock);
+                    const quantie = parseInt(prompt("Nouveau quantie : "));
+                    gestionnaireProduits.modifierProduit(id, prix, quantie);
                     sauvegarderProduits();
                     console.log("Produit modifié avec succès.");
                 } else if (choixProduits === 3) {
