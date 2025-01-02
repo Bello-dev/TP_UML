@@ -51,7 +51,7 @@ def afficher_menu_principal():
 def afficher_menu_produits():
     print("\n==== GESTION DU STOCK DES PRODUITS ====")
     print("1. Ajouter un produit")
-    print("2. Modifier le prix et le stock d'un produit")
+    print("2. Modifier le prix et la quantite d'un produit")
     print("3. Rechercher un produit par nom")
     print("4. Rechercher un produit par catégorie")
     print("5. Rechercher un produit par fournisseur")
@@ -99,14 +99,14 @@ def main():
                     os.system('clear')
                     nom = input("Nom du produit : ")
                     prix = float(input("Prix du produit : "))
-                    stock = int(input("Stock du produit : "))
+                    quantite = int(input("Quantité du produit : "))
                     categorie = input("Catégorie du produit : ")
                     fournisseur_nom = input("Nom du fournisseur : ")
                     fournisseur_contact = input("Contact du fournisseur : ")
                     fournisseur_type = input("Type de produit du fournisseur : ")
 
                     fournisseur = Fournisseur(0, fournisseur_nom, fournisseur_contact, fournisseur_type)
-                    produit = Produit(0, nom, prix, stock, categorie, fournisseur)
+                    produit = Produit(0, nom, prix, quantite, categorie, fournisseur)
                     gestionnaire_produits.ajouter_produit(produit)
 
                     sauvegarder_produits(gestionnaire_produits)
@@ -115,8 +115,8 @@ def main():
                     os.system('clear')
                     id = int(input("ID du produit à modifier : "))
                     prix = float(input("Nouveau prix : "))
-                    stock = int(input("Nouveau stock : "))
-                    gestionnaire_produits.modifier_produit(id, prix, stock)
+                    quantite = int(input("Nouvelle quantité : "))
+                    gestionnaire_produits.modifier_produit(id, prix, quantite)
                     sauvegarder_produits(gestionnaire_produits)
                     print("Produit modifié avec succès.")
                 elif choix_produits == 3:

@@ -20,10 +20,10 @@ class GestionnaireProduits:
         for produit in self.produits:
             produit.afficher_details()
 
-    def modifier_produit(self, id, nouveau_prix, nouveau_stock):
+    def modifier_produit(self, id, nouveau_prix, nouvelle_quantite):
         for produit in self.produits:
             if produit.id == id:
-                produit.mettre_a_jour_produit(nouveau_prix, nouveau_stock)
+                produit.mettre_a_jour_produit(nouveau_prix, nouvelle_quantite)
                 print("Produit mis à jour avec succès")
                 return
         print("Produit non trouvé")
